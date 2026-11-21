@@ -2,3 +2,6 @@
 runOnSave = false
 fileWatcherType = "none"
 allowRunOnSave = false
+
+[client]
+toolbarMode = "minimal"
