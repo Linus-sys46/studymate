@@ -138,8 +138,30 @@ with st.sidebar:
     document_summary = st.empty()
     activity_summary = st.empty()
 
-st.title("StudyMate")
-st.caption("Study tools and Q&A grounded strictly in your uploaded lecture PDF.")
+st.markdown(
+    """
+    <style>
+    .studymate-header {
+        text-align: center;
+        margin: 0 auto 2rem;
+    }
+
+    .studymate-header h1 {
+        margin-bottom: 0.4rem;
+    }
+
+    .studymate-header p {
+        margin: 0;
+        opacity: 0.85;
+    }
+    </style>
+    <div class="studymate-header">
+        <h1>StudyMate</h1>
+        <p>Study tools and Q&amp;A grounded strictly in your uploaded lecture PDF.</p>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
 
 STUDY_SYSTEM_RULE = (
     "You are a university study assistant. Use ONLY the provided lecture PDF text. "
