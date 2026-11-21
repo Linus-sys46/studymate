@@ -1,5 +1,6 @@
 from collections.abc import Iterator
 import logging
+from pathlib import Path
 
 import streamlit as st
 from pypdf import PdfReader
@@ -138,23 +139,10 @@ with st.sidebar:
     document_summary = st.empty()
     activity_summary = st.empty()
 
+css = Path(__file__).with_name("styles.css").read_text(encoding="utf-8")
+st.markdown(f"<style>{css}</style>", unsafe_allow_html=True)
 st.markdown(
     """
-    <style>
-    .studymate-header {
-        text-align: center;
-        margin: 0 auto 2rem;
-    }
-
-    .studymate-header h1 {
-        margin-bottom: 0.4rem;
-    }
-
-    .studymate-header p {
-        margin: 0;
-        opacity: 0.85;
-    }
-    </style>
     <div class="studymate-header">
         <h1>StudyMate</h1>
         <p>Study tools and Q&amp;A grounded strictly in your uploaded lecture PDF.</p>
